@@ -1,0 +1,36 @@
+#!/bin/sh -e
+### BEGIN INIT INFO
+# Provides:          skeleton
+# Required-Start:    $networking
+# Required-Stop:     $networking
+# Should-Start:      $portmap
+# Should-Stop:       $portmap
+# X-Start-Before:    nis
+# X-Stop-After:      nis
+# Default-Start:     S
+# Default-Stop:      0 6
+# X-Interactive:     false
+# Short-Description: Example initscript
+# Description:       This file should be used to construct scripts to be
+#                    placed in /etc/init.d.
+### END INIT INFO
+
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+[ -x /sbin/ifup ] || exit 0
+[ -x /sbin/ifdown ] || exit 0
+
+. /lib/lsb/init-functions
+
+case "$1" in
+start)
+	daemon /home/hdm/tool/MyJavamail/whoMailMain.sh
+	;;
+
+*)
+	echo "Usage: /etc/init.d/whoMailD start"
+	exit 1
+	;;
+esac
+
+exit 0
