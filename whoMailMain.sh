@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-echo "起動成功" >> /home/hdm/who.log
+echo "起動成功" >> /home/xxxx/who.log
 
 #cd `/usr/bin/dirname $0` これをやると他のPGでエラー発生
 
