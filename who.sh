@@ -7,7 +7,7 @@ do
   #clear
   wk=`who`
   if [ "${wk}" != "${bk}" ] ; then
-    echo `who` | java -jar javamail.jar "コンソールに動きがありました" "tanaka-hidemune@ezweb.ne.jp"
+    echo `who` | java -jar javamail.jar "コンソールに動きがありました" "xxxx@xxxx.jp"
 
     echo ${wk} >> /home/hdm/who.log
     echo "" >> /home/hdm/who.log
